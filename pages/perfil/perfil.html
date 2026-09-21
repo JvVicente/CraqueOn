@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/perfil.css">
+    <script src="JS/perfil.js" defer></script>
+    <title>Perfil</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Voltar</a>
+        <h1>Perfil</h1>
+    </header>
+
+    <main class="container">
+        <h2>Realize seu cadastro</h2>
+
+        <input type="text" id="name" placeholder="Digite seu nome">
+        <input type="email" id="email" placeholder="Digite seu email">
+        <input type="tel" id="telefone" placeholder="Digite seu telefone">
+        <input type="number" id="idade" placeholder="Digite sua idade">
+        <input type="text" id="esporte" placeholder="Digite seu esporte favorito">
+        <button id="btn_cadastrar">Cadastrar</button>
+
+        <div id="alterar"></div>
+
+        <table id="tabela_jogadores">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Idade</th>
+                    <th>Esporte Favorito</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="ul_dados"></tbody>
+        </table>
+    </main>
+</body>
+
+</html>
