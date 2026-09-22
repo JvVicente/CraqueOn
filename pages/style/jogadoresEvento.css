@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.evento {
+    background-color: #eeeeee;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.evento h2 {
+    margin: 0 0 5px 0;
+}
+
+.evento p {
+    color: #555;
+}
+
+/* FORMULÁRIO */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* BOTÕES */
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#btn-adicionar {
+    background-color: #198754;
+    color: white;
+}
+
+#btn-adicionar:hover {
+    background-color: #157347;
+}
+
+/* TABELA */
+
+#tabela-jogadores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Cabeçalho da tabela */
+
+#tabela-jogadores thead {
+    background-color: #198754;
+    color: white;
+}
+
+#tabela-jogadores th {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Células */
+
+#tabela-jogadores td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Efeito ao passar o mouse */
+
+#tabela-jogadores tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* BOTÕES DA TABELA */
+
+#tabela-jogadores button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Botão Alterar */
+
+.btn-carregar {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Botão Excluir */
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-carregar:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-excluir:hover {
+    background-color: #bb2d3b;
+}
+
+
+
+#alterar {
+    margin-top: 10px;
+}
+
+.btn-alterar {
+    width: 100%;
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-alterar:hover {
+    background-color: #ffca2c;
+}
+
+
+
+button:hover {
+    opacity: 0.85;
+}

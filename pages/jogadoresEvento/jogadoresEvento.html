@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogadores do Evento</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Jogadores do Evento<span id="esporte"></span></h1>
+
+        <div class="evento">
+            <h2>Evento: Campeonato de </h2>
+            <p>Cadastre os jogadores participantes deste evento.</p>
+        </div>
+
+        <div class="formulario">
+
+            <input type="text" id="nome" placeholder="Nome do jogador">
+
+            <input type="number" id="idade" placeholder="Idade">
+
+            <select id="posicao" placeholder="Posição">
+                <option value="">Selecione a posição</option>
+                <option value="Goleiro">Goleiro</option>
+                <option value="Zagueiro">Zagueiro</option>
+                <option value="Meio-campista">Meio-campista</option>
+                <option value="Ponta">Ponta Esquerda</option>
+                <option value="Ponta">Ponta Direita</option>
+                <option value="Atacante">Atacante</option>
+            </select>
+
+            <button id="btn-adicionar">
+                Adicionar jogador
+            </button>
+
+        </div>
+
+        <div id="alterar"></div>
+
+    </div>
+    <div class="container">
+        <h2>Lista de Jogadores</h2>
+        <table id="tabela-jogadores">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Posição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
