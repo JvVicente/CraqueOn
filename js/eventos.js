@@ -49,7 +49,7 @@ function salvarEvento(e) {
 
     let evento = {
         id: 0,
-        nome: document.getElementById("nome").value,
+        nome: document.getElementById("nomeEvento").value,
         esporte: document.getElementById("esporte").value,
         data: document.getElementById("data").value,
         horario: document.getElementById("horario").value,
@@ -86,7 +86,7 @@ function editarEvento(id) {
     for (let i = 0; i < eventos.length; i++) {
         if (eventos[i].id == id) {
             document.getElementById("eventoId").value = eventos[i].id;
-            document.getElementById("nome").value = eventos[i].nome;
+            document.getElementById("nomeEvento").value = eventos[i].nome;
             document.getElementById("esporte").value = eventos[i].esporte;
             document.getElementById("data").value = eventos[i].data;
             document.getElementById("horario").value = eventos[i].horario;
@@ -156,7 +156,7 @@ function listarEventos() {
                 "<td>" +
                     "<button class='editar' onclick='editarEvento(" + evento.id + ")'>Editar</button> " +
                     "<button class='excluir' onclick='excluirEvento(" + evento.id + ")'>Excluir</button>" +
-                    "<button class='detalhes' onclick='window.location.href=\"pain/index.html?id=" + evento.id + "\"'>Detalhes</button>" +
+                    "<button class='detalhes' onclick='window.location.href=\"jogadoresEvento.html?id=" + evento.id + "\"'>Detalhes</button>" +
                 "</td>" +
             "</tr>";
     }

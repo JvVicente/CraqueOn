@@ -7,7 +7,7 @@
 
     <title>Jogadores do Evento</title>
 
-    <link rel="stylesheet" href="/style/jogadoresEvento.css">
+    <link rel="stylesheet" href="../style/jogadoresEvento.css">
 </head>
 
 <body>
@@ -28,11 +28,11 @@
             <input type="number" id="idade" placeholder="Idade">
 
             <!-- As posicoes sao criadas pelo JavaScript, de acordo com o esporte do evento -->
-            <select id="posicao" placeholder="Posição">
+            <select id="posicao">
                 <option value="">Selecione a posição</option>
             </select>
 
-            <button id="btn-adicionar">
+            <button id="btn-adicionar" onclick="adicionar()">
                 Adicionar jogador
             </button>
 
@@ -52,11 +52,13 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="corpoTabela">
+                <!-- As linhas sao criadas pelo JavaScript -->
+            </tbody>
         </table>
     </div>
 
-    <script src="/js/jogadoresEvento.js"></script>
+    <script src="../js/jogadoresEvento.js"></script>
 
 </body>
 
