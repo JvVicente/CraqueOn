@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CraqueOn - Cadastro de Eventos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <h1>CraqueOn - Cadastro de Eventos</h1>
+
+    <!-- ===================== FORMULARIO (Create e Update) ===================== -->
+
+    <h2 id="tituloFormulario">Novo evento</h2>
+
+    <form id="formEvento" onsubmit="salvarEvento(event)">
+
+        <!-- Campo escondido: guarda o id do evento que esta sendo alterado.
+            Quando esta vazio, significa que e um cadastro novo. -->
+        <input type="hidden" id="eventoId">
+
+        <div>
+            <label for="nome">Nome do evento</label>
+            <input type="text" id="nome" required>
+        </div>
+
+        <div>
+            <label for="esporte">Esporte</label>
+            <select id="esporte" required>
+                <option value="">Selecione...</option>
+                <option value="Futebol">Futebol</option>
+                <option value="Futsal">Futsal</option>
+                <option value="Volei">Volei</option>
+                <option value="Basquete">Basquete</option>
+                <option value="Handebol">Handebol</option>
+                <option value="Tenis">Tenis</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="data">Data</label>
+            <input type="date" id="data" required>
+        </div>
+
+        <div>
+            <label for="horario">Horario</label>
+            <input type="time" id="horario" required>
+        </div>
+
+        <div>
+            <label for="local">Local</label>
+            <input type="text" id="local" required>
+        </div>
+
+        <div>
+            <label for="qtdJogadores">Jogadores necessarios</label>
+            <input type="number" id="qtdJogadores" min="1" required>
+        </div>
+
+        <div>
+            <label for="valor">Valor do aluguel (R$)</label>
+            <input type="number" id="valor" step="0.01" min="0" required>
+        </div>
+
+        <div class="botoes">
+            <button type="submit" id="botaoSalvar">Cadastrar</button>
+            <button type="button" onclick="limparFormulario()">Cancelar</button>
+        </div>
+
+    </form>
+
+    <!-- ===================== LISTAGEM (Read) ===================== -->
+
+    <h2>Eventos cadastrados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Esporte</th>
+                <th>Data</th>
+                <th>Horario</th>
+                <th>Local</th>
+                <th>Jogadores</th>
+                <th>Valor</th>
+                <th>Acões</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+            <!-- As linhas sao criadas pelo JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="js/eventos.js"></script>
+
+</body>
+</html>

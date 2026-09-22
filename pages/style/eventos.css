@@ -1,0 +1,136 @@
+/* ==========================================================
+    CraqueOn - Estilos da tela de Eventos
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f4f9;
+    color: #22303f;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #0f2a44;
+    border-bottom: 3px solid #23c17c;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #0f2a44;
+    margin-bottom: 12px;
+}
+
+/* ===================== FORMULARIO ===================== */
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #42536a;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px;
+    border: 1px solid #ccd5e0;
+    border-radius: 4px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #23c17c;
+}
+
+/* faz a linha dos botoes ocupar toda a largura do formulario */
+.botoes {
+    grid-column: 1 / -1;
+    border-top: 1px solid #eef1f5;
+    padding-top: 15px;
+}
+
+button {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e4e9f0;
+    color: #42536a;
+    cursor: pointer;
+}
+
+#botaoSalvar {
+    background-color: #23c17c;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* ===================== TABELA ===================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+th {
+    background-color: #0f2a44;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eef1f5;
+}
+
+tr:hover td {
+    background-color: #f5f8fb;
+}
+
+td button {
+    font-size: 12px;
+    padding: 5px 12px;
+}
+
+.editar {
+    background-color: #2b6cb0;
+    color: #ffffff;
+}
+
+.excluir {
+    background-color: #d64545;
+    color: #ffffff;
+}

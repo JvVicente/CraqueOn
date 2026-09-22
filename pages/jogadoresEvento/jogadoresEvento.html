@@ -17,7 +17,7 @@
         <h1>Jogadores do Evento<span id="esporte"></span></h1>
 
         <div class="evento">
-            <h2>Evento: Campeonato de </h2>
+            <h2>Evento: <span id="nomeEvento"></span></h2>
             <p>Cadastre os jogadores participantes deste evento.</p>
         </div>
 
@@ -27,14 +27,9 @@
 
             <input type="number" id="idade" placeholder="Idade">
 
+            <!-- As posicoes sao criadas pelo JavaScript, de acordo com o esporte do evento -->
             <select id="posicao" placeholder="Posição">
                 <option value="">Selecione a posição</option>
-                <option value="Goleiro">Goleiro</option>
-                <option value="Zagueiro">Zagueiro</option>
-                <option value="Meio-campista">Meio-campista</option>
-                <option value="Ponta">Ponta Esquerda</option>
-                <option value="Ponta">Ponta Direita</option>
-                <option value="Atacante">Atacante</option>
             </select>
 
             <button id="btn-adicionar">
