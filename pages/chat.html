@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - CRUD LocalStorage</title>
+    <link rel="stylesheet" href="/style/chat.css">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <aside class="sidebar">
+
+            <div class="profile">
+                Chat
+            </div>
+
+            <div class="contacts" id="contacts"></div>
+
+        </aside>
+
+        <main class="chat">
+
+            <header class="chat-header">
+                <h2 id="headerName"></h2>
+                <p id="headerStatus"></p>
+            </header>
+
+            <section class="messages" id="messages"></section>
+
+            <form class="input-area" id="messageForm">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Digite uma mensagem..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                    class="send-button"
+                    title="Enviar mensagem"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+        </main>
+
+    </div>
+
+    <div class="modal" id="editModal">
+
+        <div class="modal-content">
+
+            <h3>Editar mensagem</h3>
+
+            <input
+                type="text"
+                id="editInput"
+                placeholder="Digite a nova mensagem"
+            >
+
+            <div class="modal-buttons">
+
+                <button
+                    class="cancel-button"
+                    onclick="fecharModal()"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    class="save-button"
+                    onclick="salvarEdicao()"
+                >
+                    Salvar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/chat.js"></script>
+
+</body>
+</html>
+

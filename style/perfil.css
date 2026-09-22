@@ -1,3 +1,7 @@
+/* ==========================================================
+    CraqueOn - Estilos da tela de Perfil
+   ========================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,85 +9,94 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f4f9;
+    color: #22303f;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
 header {
-    width: 100%;
-    max-width: 700px;
-    margin: 50px auto 0 auto;
-    background-color: white;
-    padding: 20px 30px;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-bottom: 25px;
 }
 
 header a {
     text-decoration: none;
-    color: #198754;
+    color: #23c17c;
     font-weight: bold;
+    font-size: 14px;
 }
 
-header h1 {
-    margin: 0;
+h1 {
+    font-size: 24px;
+    color: #0f2a44;
+    border-bottom: 3px solid #23c17c;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+h2 {
+    font-size: 18px;
+    color: #0f2a44;
+    margin-bottom: 12px;
 }
 
 .container,
 main {
-    width: 100%;
-    max-width: 1000px;
-    margin: 50px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 25px;
-    margin-bottom: 15px;
-}
-
-/* FORMULÁRIO */
+/* ===================== FORMULÁRIO ===================== */
 
 input {
     display: block;
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px;
+    border: 1px solid #ccd5e0;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-/* BOTÕES */
+input:focus {
+    outline: none;
+    border-color: #23c17c;
+}
+
+/* ===================== BOTÕES ===================== */
 
 button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    font-family: inherit;
     font-size: 14px;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e4e9f0;
+    color: #42536a;
+    cursor: pointer;
 }
 
 #btn_cadastrar {
-    background-color: #198754;
-    color: white;
+    background-color: #23c17c;
+    color: #ffffff;
+    font-weight: bold;
     width: 100%;
-    padding: 12px 15px;
+    padding: 9px 18px;
     margin-bottom: 10px;
 }
 
 #btn_cadastrar:hover {
-    background-color: #157347;
+    background-color: #1da86a;
 }
 
 #alterar {
@@ -93,40 +106,45 @@ button {
 .btn_alterar {
     width: 100%;
     background-color: #ffc107;
-    color: black;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .btn_alterar:hover {
     background-color: #ffca2c;
 }
 
-/* TABELA RESPONSIVA (sem scroll) */
+/* ===================== TABELA RESPONSIVA (sem scroll) ===================== */
 
 table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 13px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
     margin-top: 20px;
     table-layout: auto;
 }
 
 thead {
-    background-color: #198754;
-    color: white;
+    background-color: #0f2a44;
 }
 
 th {
-    padding: 15px;
+    color: #ffffff;
     text-align: left;
+    padding: 10px;
 }
 
 td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eef1f5;
     word-break: break-word;
 }
 
-tbody tr:hover {
-    background-color: #f5f5f5;
+tr:hover td {
+    background-color: #f5f8fb;
 }
 
 td[colspan] {
@@ -136,40 +154,37 @@ td[colspan] {
 /* BOTÕES DA TABELA */
 
 td:last-child {
-    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 5px;
-    align-items: center;
 }
 
 td button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
+    font-size: 12px;
+    padding: 5px 12px;
     white-space: nowrap;
 }
 
 .btn_carregar {
-    background-color: #0d6efd;
-    color: white;
+    background-color: #2b6cb0;
+    color: #ffffff;
 }
 
 .btn_carregar:hover {
-    background-color: #0b5ed7;
+    background-color: #235a92;
 }
 
 .btn_excluir {
-    background-color: #dc3545;
-    color: white;
+    background-color: #d64545;
+    color: #ffffff;
 }
 
 .btn_excluir:hover {
-    background-color: #bb2d3b;
+    background-color: #b93a3a;
 }
 
 button:hover {
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* Telas menores */
@@ -177,14 +192,12 @@ button:hover {
 @media (max-width: 850px) {
 
     .container,
-    main,
-    header {
-        max-width: 95%;
+    main {
         padding: 15px;
     }
 
     table {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     th,
@@ -196,16 +209,5 @@ button:hover {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
-    }
-}
-
-@media (max-width: 500px) {
-    table {
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 6px;
     }
 }

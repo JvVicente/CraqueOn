@@ -5,6 +5,11 @@ document.getElementById('btn_cadastrar').addEventListener('click', () => {
     let idade = document.getElementById("idade").value;
     let esporte = document.getElementById("esporte").value;
 
+    if (!nome || !email || !telefone || !idade || !esporte) {
+        alert("Preencha todos os campos para cadastrar.");
+        return;
+    }
+
     let lista = JSON.parse(localStorage.getItem("usuarios"));
 
     if (!lista) { lista = []; }
@@ -29,8 +34,8 @@ function listar() {
     document.getElementById('ul_dados').innerHTML = "";
 
     if (lista.length === 0) {
-        document.getElementById('ul_dados').innerHTML = 
-        "<tr><td colspan='6'>Nenhum usuário cadastrado.</td></tr>";
+        document.getElementById('ul_dados').innerHTML =
+            "<tr><td colspan='6'>Nenhum usuário cadastrado.</td></tr>";
         return;
     }
 
@@ -52,6 +57,11 @@ function listar() {
 };
 
 function excluir(indice) {
+    let confirmar = confirm("Deseja realmente excluir este usuário?");
+
+    if (!confirmar) { return; }
+
+
     let lista = JSON.parse(localStorage.getItem("usuarios"));
     lista.splice(indice, 1);
     localStorage.setItem("usuarios", JSON.stringify(lista));
