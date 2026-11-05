@@ -13,27 +13,32 @@
 <body>
 
     <div class="container">
-        <a href="/index.html">Voltar</a>
+        <a href="eventos.html">Voltar</a>
         <h1>Jogadores do Evento<span id="esporte"></span></h1>
 
         <div class="evento">
             <h2>Evento: <span id="nomeEvento"></span></h2>
-            <p>Cadastre os jogadores participantes deste evento.</p>
+            <p id="infoEvento">Inscreva os atletas participantes deste evento.</p>
         </div>
 
         <div class="formulario">
 
-            <input type="text" id="nome" placeholder="Nome do jogador">
+            <!-- O jogador e um atleta ja cadastrado no banco:
+                as opcoes vem da tabela atleta, pelo jogador_opcoes.php -->
+            <select id="idAtleta">
+                <option value="">Selecione o atleta</option>
+            </select>
 
-            <input type="number" id="idade" placeholder="Idade">
-
-            <!-- As posicoes sao criadas pelo JavaScript, de acordo com o esporte do evento -->
-            <select id="posicao">
-                <option value="">Selecione a posição</option>
+            <select id="situacao">
+                <option value="PENDENTE_PAGAMENTO">Pendente de pagamento</option>
+                <option value="CONFIRMADA">Confirmada</option>
+                <option value="PRESENTE">Presente</option>
+                <option value="FALTOU">Faltou</option>
+                <option value="CANCELADA">Cancelada</option>
             </select>
 
             <button id="btn-adicionar" onclick="adicionar()">
-                Adicionar jogador
+                Inscrever jogador
             </button>
 
         </div>
@@ -41,6 +46,7 @@
         <div id="alterar"></div>
 
     </div>
+
     <div class="container">
         <h2>Lista de Jogadores</h2>
         <table id="tabela-jogadores">
@@ -49,11 +55,14 @@
                     <th>Nome</th>
                     <th>Idade</th>
                     <th>Posição</th>
-                    <th>Ações</th>
+                    <th>Situação</th>
+                    <th>Inscrito em</th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody id="corpoTabela">
-                <!-- As linhas sao criadas pelo JavaScript -->
+                <!-- As linhas sao criadas pelo JavaScript, com os dados
+                    que o jogador_get.php leu do MySQL -->
             </tbody>
         </table>
     </div>

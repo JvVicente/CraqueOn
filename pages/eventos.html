@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CraqueOn - Cadastro de Eventos</title>
     <link rel="stylesheet" href="../style/eventos.css">
 </head>
+
 <body>
-    <a href="/index.html">Voltar</a>
+    <a href="../index.html">Voltar</a>
     <h1>CraqueOn - Cadastro de Eventos</h1>
 
     <!-- ===================== FORMULARIO (Create e Update) ===================== -->
@@ -15,25 +18,21 @@
 
     <form id="formEvento" onsubmit="salvarEvento(event)">
 
-        <!-- Campo escondido: guarda o id do evento que esta sendo alterado.
-            Quando esta vazio, significa que e um cadastro novo. -->
+        <!-- Campo escondido: guarda o id_partida do evento que esta sendo
+            alterado. Quando esta vazio, significa que e um cadastro novo.
+            O JavaScript usa esse id na URL do evento_alterar.php. -->
         <input type="hidden" id="eventoId">
 
         <div>
-            <label for="nomeEvento">Nome do evento</label>
-            <input type="text" id="nomeEvento" required>
+            <label for="titulo">Nome do evento</label>
+            <input type="text" id="titulo" maxlength="120" required>
         </div>
 
         <div>
-            <label for="esporte">Esporte</label>
-            <select id="esporte" required>
+            <label for="idModalidade">Esporte (modalidade)</label>
+            <!-- As opcoes vem da tabela modalidade, pelo evento_opcoes.php -->
+            <select id="idModalidade" required>
                 <option value="">Selecione...</option>
-                <option value="Futebol">Futebol</option>
-                <option value="Futsal">Futsal</option>
-                <option value="Volei">Volei</option>
-                <option value="Basquete">Basquete</option>
-                <option value="Handebol">Handebol</option>
-                <option value="Tenis">Tenis</option>
             </select>
         </div>
 
@@ -48,18 +47,39 @@
         </div>
 
         <div>
-            <label for="local">Local</label>
-            <input type="text" id="local" required>
+            <label for="idLocal">Local</label>
+            <!-- Opcoes da tabela local_esportivo -->
+            <select id="idLocal" required>
+                <option value="">Selecione...</option>
+            </select>
         </div>
 
         <div>
-            <label for="qtdJogadores">Jogadores necessarios</label>
-            <input type="number" id="qtdJogadores" min="1" required>
+            <label for="idOrganizador">Organizador</label>
+            <!-- Opcoes da tabela usuario (permissao ORGANIZADOR ou ADMIN) -->
+            <select id="idOrganizador" required>
+                <option value="">Selecione...</option>
+            </select>
         </div>
 
         <div>
-            <label for="valor">Valor do aluguel (R$)</label>
-            <input type="number" id="valor" step="0.01" min="0" required>
+            <label for="vagasTotal">Vagas</label>
+            <input type="number" id="vagasTotal" min="1" required>
+        </div>
+
+        <div>
+            <label for="valor">Valor da inscricao (R$)</label>
+            <input type="number" id="valor" step="0.01" min="0" value="0" required>
+        </div>
+
+        <div>
+            <label for="status">Status</label>
+            <select id="status" required>
+                <option value="AGENDADA">Agendada</option>
+                <option value="EM_ANDAMENTO">Em andamento</option>
+                <option value="FINALIZADA">Finalizada</option>
+                <option value="CANCELADA">Cancelada</option>
+            </select>
         </div>
 
         <div class="botoes">
@@ -82,17 +102,20 @@
                 <th>Data</th>
                 <th>Horario</th>
                 <th>Local</th>
-                <th>Jogadores</th>
+                <th>Vagas</th>
                 <th>Valor</th>
-                <th>Acões</th>
+                <th>Status</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody id="corpoTabela">
-            <!-- As linhas sao criadas pelo JavaScript -->
+            <!-- As linhas sao criadas pelo JavaScript, com os dados
+                que o evento_get.php leu do MySQL -->
         </tbody>
     </table>
 
     <script src="../js/eventos.js"></script>
 
 </body>
+
 </html>
