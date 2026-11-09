@@ -22,7 +22,7 @@ Projeto interdisciplinar das matérias de **Desenvolvimento Web**, **Arquitetura
 ## 🧰 Tecnologias
 
 - HTML, CSS e JavaScript
-- [Banco de dados, quando definido]
+- PHP (MySQLi) e MySQL (XAMPP/phpMyAdmin)
 
 ## 📁 Estrutura do repositório
 
@@ -30,6 +30,8 @@ Projeto interdisciplinar das matérias de **Desenvolvimento Web**, **Arquitetura
 CraqueOn/
 ├── index.html   # página inicial
 ├── pages/       # demais páginas
+├── php/         # back-end (php/JoaoVicente: conexao.php e CRUD de perfil)
+├── sql/         # script do banco (craqueon.sql)
 ├── style/       # estilos CSS
 └── js/          # scripts JavaScript
 ```
@@ -39,7 +41,10 @@ CraqueOn/
 ```bash
 git clone https://github.com/JvVicente/CraqueOn.git
 cd CraqueOn
-# abra o index.html no navegador
+# copie a pasta para C:\xampp\htdocs\CraqueOn
+# inicie Apache e MySQL no XAMPP
+# importe sql/craqueon.sql no phpMyAdmin
+# acesse http://localhost/CraqueOn/
 ```
 
 ## 👥 Integrantes
