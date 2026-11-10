@@ -15,8 +15,9 @@
          atualiza a tela.
    ========================================================== */
 
-// Caminho da pasta dos arquivos PHP (a partir de /pages/)
-const CAMINHO_PHP = "../php/";
+// Caminho da pasta dos arquivos PHP (a partir de /pages/).
+// O projeto organiza o back-end em uma subpasta por integrante.
+const CAMINHO_PHP = "../php/Leonardo Nardi/";
 
 /* ---------- OPCOES DOS CAMPOS DE SELECAO ---------- */
 
