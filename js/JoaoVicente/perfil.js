@@ -6,8 +6,8 @@ function limparCampos() {
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("telefone").value = "";
-    document.getElementById("idade").value = "";
-    document.getElementById("esporte").value = "";
+    document.getElementById("cidade").value = "";
+    document.getElementById("estado").value = "";
 }
 
 // Monta o FormData com os dados digitados no formulário
@@ -16,8 +16,8 @@ function montarFormData() {
     fd.append('nome', document.getElementById("name").value);
     fd.append('email', document.getElementById("email").value);
     fd.append('telefone', document.getElementById("telefone").value);
-    fd.append('idade', document.getElementById("idade").value);
-    fd.append('esporte', document.getElementById("esporte").value);
+    fd.append('cidade', document.getElementById("cidade").value);
+    fd.append('estado', document.getElementById("estado").value);
     return fd;
 }
 
@@ -26,10 +26,10 @@ async function cadastrar() {
     let nome = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let telefone = document.getElementById("telefone").value;
-    let idade = document.getElementById("idade").value;
-    let esporte = document.getElementById("esporte").value;
+    let cidade = document.getElementById("cidade").value;
+    let estado = document.getElementById("estado").value;
 
-    if (!nome || !email || !telefone || !idade || !esporte) {
+    if (!nome || !email || !telefone || !cidade || !estado) {
         alert("Preencha todos os campos para cadastrar.");
         return;
     }
@@ -49,7 +49,6 @@ async function cadastrar() {
     }
 };
 
-// READ
 // READ
 async function listar() {
     document.getElementById('ul_dados').innerHTML = "";
@@ -72,11 +71,11 @@ async function listar() {
         <td>${usuario.nome}</td>
         <td>${usuario.email}</td>
         <td>${usuario.telefone}</td>
-        <td>${usuario.idade}</td>
-        <td>${usuario.esporte}</td>
+        <td>${usuario.cidade}</td>
+        <td>${usuario.estado}</td>
         <td>
-            <button class="btn_excluir" onclick="excluir(${usuario.id})">Excluir</button>
-            <button class="btn_carregar" onclick="carregar(${usuario.id})">Carregar</button>
+            <button class="btn_excluir" onclick="excluir(${usuario.id_usuario})">Excluir</button>
+            <button class="btn_carregar" onclick="carregar(${usuario.id_usuario})">Carregar</button>
         </td>
     </tr>`;
         }
@@ -116,9 +115,9 @@ async function carregar(id) {
         document.getElementById('name').value = reg.nome;
         document.getElementById('email').value = reg.email;
         document.getElementById('telefone').value = reg.telefone;
-        document.getElementById('idade').value = reg.idade;
-        document.getElementById('esporte').value = reg.esporte;
-        document.getElementById("alterar").innerHTML = `<button class="btn_alterar" onclick="alterar(${reg.id})">Alterar</button>`;
+        document.getElementById('cidade').value = reg.cidade;
+        document.getElementById('estado').value = reg.estado;
+        document.getElementById("alterar").innerHTML = `<button class="btn_alterar" onclick="alterar(${reg.id_usuario})">Alterar</button>`;
     } else {
         alert('ERRO: ' + resposta.mensagem);
     }
