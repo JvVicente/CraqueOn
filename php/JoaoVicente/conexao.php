@@ -1,9 +1,12 @@
-<?php // php/conexao.php
+<?php // php/JoaoVicente/conexao.php
+// Desliga as excecoes automaticas do MySQLi (PHP 8.1+) para o PHP sempre devolver JSON
+mysqli_report(MYSQLI_REPORT_OFF);
+
 // Variáveis de conexão
 $servidor = 'localhost:3306'; // host:porta
 $usuario = 'root';            // usuário do MySQL
 $senha = '';                  // senha (vazia no XAMPP padrão)
-$nome_banco = 'craqueon';     // nome do banco criado pelo script SQL
+$nome_banco = 'craque_on';    // banco do projeto (craque_on.sql)
 
 // Criar a conexão
 $conexao = new mysqli($servidor, $usuario, $senha, $nome_banco);

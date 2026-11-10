@@ -1,18 +1,18 @@
-<?php // php/perfil_alterar.php
+<?php // php/JoaoVicente/perfil_alterar.php
 include_once('conexao.php');
 
 $retorno = ['status' => '', 'mensagem' => '', 'data' => []];
 
 // ID vem na URL: perfil_alterar.php?id=42
 if (isset($_GET['id'])) {
-    $nome = $_POST['nome'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $telefone = $_POST['telefone'] ?? '';
-    $idade = (int) ($_POST['idade'] ?? 0);
-    $esporte = $_POST['esporte'] ?? '';
+    $nome = trim($_POST['nome'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $telefone = trim($_POST['telefone'] ?? '');
+    $cidade = trim($_POST['cidade'] ?? '');
+    $estado = strtoupper(trim($_POST['estado'] ?? ''));
 
     // Validação: não executa o UPDATE se faltar algum campo
-    if (empty($nome) || empty($email) || empty($telefone) || empty($idade) || empty($esporte)) {
+    if (empty($nome) || empty($email) || empty($telefone) || empty($cidade) || empty($estado)) {
         $retorno['status'] = 'nok';
         $retorno['mensagem'] = 'Preencha todos os campos.';
         $conexao->close();
@@ -22,13 +22,13 @@ if (isset($_GET['id'])) {
     }
 
     $stmt = $conexao->prepare(
-        'UPDATE perfil
-         SET nome = ?, email = ?, telefone = ?, idade = ?, esporte = ?
-         WHERE id = ?'
+        'UPDATE usuario
+         SET nome = ?, email = ?, telefone = ?, cidade = ?, estado = ?
+         WHERE id_usuario = ?'
     );
 
-    // 'sssisi' = 3 strings + 1 integer (idade) + 1 string + 1 integer (id)
-    $stmt->bind_param('sssisi', $nome, $email, $telefone, $idade, $esporte, $_GET['id']);
+    // 'sssssi' = 5 strings + 1 integer (id)
+    $stmt->bind_param('sssssi', $nome, $email, $telefone, $cidade, $estado, $_GET['id']);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
@@ -36,7 +36,13 @@ if (isset($_GET['id'])) {
         $retorno['mensagem'] = 'Registro alterado com sucesso.';
     } else {
         $retorno['status'] = 'nok';
-        $retorno['mensagem'] = 'Nenhuma alteracao realizada (dados iguais ou registro inexistente).';
+        if ($stmt->errno == 1062) {
+            $retorno['mensagem'] = 'Ja existe um usuario com esse email.';
+        } elseif ($stmt->errno == 3819 || $stmt->errno == 4025) {
+            $retorno['mensagem'] = 'Dados invalidos: confira o email e o estado (2 letras, ex.: PR).';
+        } else {
+            $retorno['mensagem'] = 'Nenhuma alteracao realizada (dados iguais ou registro inexistente).';
+        }
     }
 
     $stmt->close();
